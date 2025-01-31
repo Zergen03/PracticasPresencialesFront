@@ -1,0 +1,51 @@
+/* _header.scss */
+@use '../base/variables' as *;
+@use '../base/mixins' as mixins;
+
+.header {
+  background-color: $primary-color;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  
+
+  &__uppersection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(102, 255, 0);
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 60%;
+      height: 100%;
+      background-color: #1c4f5f;
+      color: #fff;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 40%;
+      height: 100%;
+      background-color: #2b383b;
+      color: #fff;
+    }
+
+  }
+
+  &__lowersection {
+    display: flex;
+    align-items: end;
+    justify-content: flex-start;
+    padding-top: 10px;
+    height: 50%;
+    background-color: red;
+  }
+}
