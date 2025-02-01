@@ -11,7 +11,16 @@ async function renderTasks(categoryId, tasksContainer) {
 
         Tasks.forEach(Task => {
             const TaskElement = document.createElement('div');
-            const taskDelete = document.createElement('button');
+            const taskDelete = document.createElement('span');
+
+
+            taskDelete.textContent = 'X';
+            taskDelete.classList.add('icon');
+            taskDelete.addEventListener('click', () => {
+                taskElement.remove(); 
+                console.log(`Task "${task.name}" deleted`);
+            });
+
 
             taskDelete.innerHTML = 'Delete';
             taskDelete.id = `taskDelete-${Task.id}`;
@@ -49,34 +58,28 @@ async function renderCategories(categoryContainer) {
         if (!response.ok) throw new Error("Failed to fetch categories");
 
         const categories = await response.json();
-        categoryContainer.innerHTML = ''; // Limpia el contenedor antes de agregar nuevas categorías
+        categoryContainer.innerHTML = ''; 
 
         categories.forEach(category => {
-            // Crear el contenedor principal de la categoría
             const categoryElement = document.createElement('div');
-            categoryElement.classList.add('categoriasTextos'); // Aplica la clase CSS
+            categoryElement.classList.add('categoriasTextos'); 
 
-            // Crear el texto de la categoría
             const categoryText = document.createElement('span');
             categoryText.textContent = `• ${category.name}`;
 
-            // Crear la imagen de flecha
             const arrowIcon = document.createElement('img');
             arrowIcon.src = 'source/images/flecha-correcta.png';
             arrowIcon.alt = 'Flecha';
             arrowIcon.classList.add('tamañoFlecha');
 
-            // Añadir evento al contenedor de la categoría
             categoryElement.addEventListener('click', async function () {
                 currentCategoryId = category.id;
-                await renderTasks(currentCategoryId, tasksContainer); // Llama a la función para renderizar tareas
+                await renderTasks(currentCategoryId, tasksContainer); 
             });
 
-            // Agregar el texto y la flecha al contenedor principal
             categoryElement.appendChild(categoryText);
             categoryElement.appendChild(arrowIcon);
 
-            // Añadir la categoría al contenedor principal
             categoryContainer.appendChild(categoryElement);
         });
 
@@ -128,40 +131,34 @@ async function addTask(taskName, categoryId) {
 
         const task = await response.json();
 
-        // Inserta la nueva tarea en el contenedor
         const taskContainer = document.querySelector('.tasks__container');
 
         const taskElement = document.createElement('div');
         taskElement.classList.add('task__item');
 
-        // Crear el texto de la tarea
         const taskText = document.createElement('span');
         taskText.textContent = `• ${task.name}`;
 
-        // Crear el icono para eliminar la tarea
         const deleteIcon = document.createElement('span');
         deleteIcon.textContent = 'X';
         deleteIcon.classList.add('icon');
         deleteIcon.addEventListener('click', () => {
-            taskElement.remove(); // Elimina la tarea del DOM
+            taskElement.remove(); 
             console.log(`Task "${task.name}" deleted`);
         });
 
-        // Crear el icono para marcar la tarea como completada
         const completeIcon = document.createElement('span');
         completeIcon.textContent = '✓';
         completeIcon.classList.add('icon');
         completeIcon.addEventListener('click', () => {
-            taskElement.classList.toggle('completed'); // Marca la tarea como completada visualmente
+            taskElement.classList.toggle('completed'); 
             console.log(`Task "${task.name}" completed`);
         });
 
-        // Añadir los elementos al contenedor de la tarea
         taskElement.appendChild(taskText);
         taskElement.appendChild(deleteIcon);
         taskElement.appendChild(completeIcon);
 
-        // Añadir la tarea al contenedor principal
         taskContainer.appendChild(taskElement);
 
         console.log(`Task "${task.name}" added successfully`);

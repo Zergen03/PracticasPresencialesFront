@@ -218,6 +218,7 @@ body {
   width: 100%;
   margin: 12px auto;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .categoriasTextos:last-child {
@@ -252,6 +253,7 @@ body {
   border-radius: 4px;
   width: 95%;
   margin: 12px auto;
+  cursor: pointer;
 }
 
 .task__item:last-child {
