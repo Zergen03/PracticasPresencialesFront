@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let taskDescription = document.getElementById("taskDescription").value;
         let taskExpiration = document.getElementById("taskExpiration").value;
         let taskDifficulty = document.getElementById("taskDifficulty").value;
+        let currentCategoryId = 0; //cambiar
 
         await addTask(taskName, taskDescription, taskDifficulty, taskExpiration, currentCategoryId);
         togglePopupTask();

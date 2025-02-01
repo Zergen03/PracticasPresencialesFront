@@ -122,15 +122,17 @@ async function addTask(taskName, categoryId) {
 
 //add category
 async function addCategory(categoryName) {
+    //alert(categoryName);
     await fetch('http://localhost:5230/api/Category', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: categoryName })
-    });
+    }); 
 }
 
 //add task
 async function addTask(taskName, taskDescription, taskDifficulty, taskExpiration, categoryId) {
+    //alert(taskName + taskDescription + taskDifficulty + taskExpiration + categoryId);
     await fetch('http://localhost:5230/api/Task', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
