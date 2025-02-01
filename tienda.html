@@ -4,12 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tienda.css">
+    <link rel="stylesheet" href="builds/main.css">
     <title>Document</title>
 </head>
-<header>
 
-</header>
+<!-- HEADER -->
+<header class="header">
+    <div class="header__uppersection">
+      <nav class="nav">
+        <img src="source/images/logo.png" alt="LOGO">
+        <div class="nav__button">
+          <a href="index.html"><p>Tareas</p></a>
+        </div>
+        <div class="nav__button">
+          <a href="inventario.html"><p>Inventario</p></a>
+        </div>
+        <div class="nav__button">
+          <a href="tienda.html"><p>Tienda</p></a>
+        </div>
+      </nav>
+      <div class="info">
+        <div class="info__coins">
+          <i class="fa-solid fa-coins"></i>
+          <p id="coins">0</p>
+        </div>
+        <div class="info__profile">
+          <p id="username">Invitado</p>
+          <img src="source/images/pfp_placeholder.png" alt="profile">
+        </div>
+      </div>
+    </div>
+    <div class="header__lowersection">
+      <div class="header__lowersection--left">
+        <img src="source/images/map.jpg" alt="map">
+        <div class="lowersection__stats">
+          <p id="level">Username - Nivel 0</p>
+          <div class="stats__life">
+            <i class="fa-solid fa-heart"></i>
+            <div id="progressbar"></div>
+            <p id="life">0/100</p>
+          </div>
+          <div class="stats__xp">
+            <p>XP</p>
+            <div id="progressbar"></div>
+            <p id="xp">0/100</p>
+          </div>
+        </div>
+      </div>
+      <div class="header__lowersection--right">
+        <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, voluptate.</p>
+      </div>
+    </div>
+  </header>
 
 <body>
     <div class="contenedor__tienda">
@@ -22,7 +68,7 @@
                     <div class="contenedor__tienda__rotacion-diaria__contenedor-objetos">
                         <div class="contenedor__tienda__rotacion-diaria__objetos">
                             <div class="contenedor__tienda__rotacion-diaria__objetos__img">
-                                <img src="../PracticasPresencialesFront/source/images/armor.png"
+                                <img src=" source/images/armor.png"
                                     class="contenedor__tienda__rotacion-diaria__objetos__img__imagen" alt="" srcset="">
                             </div>
                             <div class="contenedor__tienda__rotacion-diaria__objetos__txt">
@@ -32,7 +78,7 @@
                         </div>
                         <div class="contenedor__tienda__rotacion-diaria__objetos">
                             <div class="contenedor__tienda__rotacion-diaria__objetos__img">
-                                <img src="../PracticasPresencialesFront/source/images/armor.png"
+                                <img src=" source/images/armor.png"
                                     class="contenedor__tienda__rotacion-diaria__objetos__img__imagen" alt="" srcset="">
                             </div>
                             <div class="contenedor__tienda__rotacion-diaria__objetos__txt">
@@ -42,7 +88,7 @@
                         </div>
                         <div class="contenedor__tienda__rotacion-diaria__objetos">
                             <div class="contenedor__tienda__rotacion-diaria__objetos__img">
-                                <img src="../PracticasPresencialesFront/source/images/armor.png"
+                                <img src=" source/images/armor.png"
                                     class="contenedor__tienda__rotacion-diaria__objetos__img__imagen" alt="" srcset="">
                             </div>
                             <div class="contenedor__tienda__rotacion-diaria__objetos__txt">
@@ -52,7 +98,7 @@
                         </div>
                         <div class="contenedor__tienda__rotacion-diaria__objetos">
                             <div class="contenedor__tienda__rotacion-diaria__objetos__img">
-                                <img src="../PracticasPresencialesFront/source/images/armor.png"
+                                <img src=" source/images/armor.png"
                                     class="contenedor__tienda__rotacion-diaria__objetos__img__imagen" alt="" srcset="">
                             </div>
                             <div class="contenedor__tienda__rotacion-diaria__objetos__txt">
@@ -69,7 +115,7 @@
                     <div class="contenedor__tienda__cofres__comprar">
                         <div class="contenedor__tienda__cofres__comprar__cofre">
                             <div class="contenedor__tienda__cofres__comprar__cofre__imagen">
-                                <img src="../PracticasPresencialesFront/source/images/basic-chest.jpg" class="contenedor__tienda__cofres__comprar__cofre__imagen__img" alt="" srcset="">
+                                <img src=" source/images/basic-chest.jpg" class="contenedor__tienda__cofres__comprar__cofre__imagen__img" alt="" srcset="">
                             </div>
                             <div class="contenedor__tienda__cofres__comprar__cofre__txt">
                                 <h1 class="contenedor__tienda__cofres__comprar__cofre__txt--left">x1 item</h1>
@@ -78,7 +124,7 @@
                         </div>
                         <div class="contenedor__tienda__cofres__comprar__cofre">
                             <div class="contenedor__tienda__cofres__comprar__cofre__imagen">
-                                <img src="../PracticasPresencialesFront/source/images/normal-chest.png" class="contenedor__tienda__cofres__comprar__cofre__imagen__img" alt="" srcset="">
+                                <img src=" source/images/normal-chest.png" class="contenedor__tienda__cofres__comprar__cofre__imagen__img" alt="" srcset="">
                             </div>
                             <div class="contenedor__tienda__cofres__comprar__cofre__txt">
                                 <h1 class="contenedor__tienda__cofres__comprar__cofre__txt--left">x2 item</h1>
@@ -87,7 +133,7 @@
                         </div>
                         <div class="contenedor__tienda__cofres__comprar__cofre">
                             <div class="contenedor__tienda__cofres__comprar__cofre__imagen">
-                                <img src="../PracticasPresencialesFront/source/images/premium-chest.png" class="contenedor__tienda__cofres__comprar__cofre__imagen__img" alt="" srcset="">
+                                <img src=" source/images/premium-chest.png" class="contenedor__tienda__cofres__comprar__cofre__imagen__img" alt="" srcset="">
                             </div>
                             <div class="contenedor__tienda__cofres__comprar__cofre__txt">
                                 <h1 class="contenedor__tienda__cofres__comprar__cofre__txt--left">x3 item</h1>
@@ -96,7 +142,7 @@
                         </div>
                         <div class="contenedor__tienda__cofres__comprar__cofre">
                             <div class="contenedor__tienda__cofres__comprar__cofre__imagen">
-                                <img src="../PracticasPresencialesFront/source/images/OP-chest.png" class="contenedor__tienda__cofres__comprar__cofre__imagen__img" alt="" srcset="">
+                                <img src=" source/images/OP-chest.png" class="contenedor__tienda__cofres__comprar__cofre__imagen__img" alt="" srcset="">
                             </div>
                             <div class="contenedor__tienda__cofres__comprar__cofre__txt">
                                 <h1 class="contenedor__tienda__cofres__comprar__cofre__txt--left">x4 item</h1>
@@ -107,11 +153,28 @@
                 </div>
             </div>
             <div class="contenedor__tienda__ambulante">
-                <img src="../PracticasPresencialesFront/source/images/imagen_vendedor_ambulante.png" class="contenedor__tienda__ambulante__img"
+                <img src=" source/images/imagen_vendedor_ambulante.png" class="contenedor__tienda__ambulante__img"
                     alt="">
             </div>
         </div>
     </div>
+
+    <!-- FOOTER -->
+  <footer class="footer">
+    <img class="footer__img--right" src="source/images/archer.png" alt="IMG">
+    <div class="footer__container">
+      <div class="container__top">
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+      </div>
+      <div class="container__bottom">
+        <p id="copyright">Questify ©</p>
+      </div>
+    </div>
+    <img class="footer__img--left" src="source/images/drake.png" alt="IMG">
+  </footer>
 
 </body>
 

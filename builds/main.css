@@ -16,6 +16,7 @@ body {
 .header {
   background-color: #a32b2b;
   height: 20vh;
+  width: 100%;
 }
 .header__uppersection {
   display: flex;
@@ -32,7 +33,7 @@ body {
   align-items: center;
 }
 .header__uppersection .nav img {
-  width: 150px;
+  width: 100px;
   height: 100%;
 }
 .header__uppersection .nav__button {
@@ -173,6 +174,7 @@ body {
   padding: 20px;
   background-color: #f0f0f0;
   height: 60vh;
+  width: 100%;
 }
 .body__categories, .body__tasks {
   width: 45%;
@@ -195,4 +197,223 @@ body {
   margin-top: 15px;
   background-color: #c2c2c2;
   height: 75%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contenedor__tienda {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 5%;
+}
+.contenedor__tienda__contenedores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.contenedor__tienda__tienda {
+  width: 65%;
+  height: 80%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10%;
+  border: 2px solid black;
+}
+.contenedor__tienda__rotacion-diaria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.contenedor__tienda__rotacion-diaria__contenedor-objetos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+.contenedor__tienda__rotacion-diaria__objetos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 15%;
+  min-width: 150px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.contenedor__tienda__rotacion-diaria__objetos__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedor__tienda__rotacion-diaria__objetos__img__imagen {
+  width: 50px;
+  height: 50px;
+}
+.contenedor__tienda__rotacion-diaria__objetos__txt {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.contenedor__tienda__rotacion-diaria__objetos__txt--left {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.contenedor__tienda__rotacion-diaria__objetos__txt--right {
+  font-size: 1rem;
+  color: gold;
+}
+.contenedor__tienda__cofres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.contenedor__tienda__cofres--cofres {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.contenedor__tienda__cofres--cofres__texto {
+  color: black;
+}
+.contenedor__tienda__cofres__comprar {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+.contenedor__tienda__cofres__comprar__cofre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  background-color: white;
+}
+.contenedor__tienda__cofres__comprar__cofre__imagen {
+  width: 100px;
+  height: 100px;
+}
+.contenedor__tienda__cofres__comprar__cofre__img {
+  scale: 21;
+}
+.contenedor__tienda__cofres__comprar__cofre__txt {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+.contenedor__tienda__cofres__comprar__cofre__texto {
+  color: cadetblue;
+}
+.contenedor__tienda__ambulante {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  width: 35%;
+  height: 100%;
+}
+.contenedor__tienda__ambulante__img {
+  width: 400px;
+  height: auto;
+}
+
+.contenedor__tienda__cofres__comprar__cofre__imagen__img {
+  width: 100px;
+  height: 100px;
+}
+
+.contenedor__tienda__cofres__comprar__cofre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor__tienda__cofres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.contenedor__tienda__cofres__comprar {
+  gap: 15px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contenedor__inventario {
+  background-color: blue;
+  width: 60%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 5px;
+  padding: 5px;
+  margin-top: 50px;
+}
+.contenedor__inventario__recuadro {
+  width: auto;
+  height: 10vh;
+  background-color: white;
+  border: 2px solid black;
+  min-height: 30%;
+}
+
+.recuadro__inv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+.recuadro__inv__imagen {
+  width: 5vh;
+  height: 5vh;
+  margin-top: 5vh;
+}
+
+.imagen__textos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 3vh;
 }

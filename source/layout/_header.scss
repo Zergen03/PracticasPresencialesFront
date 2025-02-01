@@ -5,6 +5,7 @@
 .header {
   background-color: #a32b2b;
   height: 20vh;
+  width: 100%;
   
   &__uppersection {
     display: flex;
@@ -19,7 +20,7 @@
       @include mixins.flex-center;
       
       img {
-        width: 150px;
+        width: 100px;
         height: 100%;
       }
       

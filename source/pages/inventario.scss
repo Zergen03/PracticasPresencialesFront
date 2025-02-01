@@ -1,17 +1,10 @@
-html {
-    height: 100vh;
 
-}
 h1 {
     font-size: 18px;
 }
-header {
-    height: 20vh;
-    width: 100%;
-    background-color: red;
-}
+
 body {
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
     flex-direction: column;
