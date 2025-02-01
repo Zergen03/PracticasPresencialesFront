@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #8bec93;
+    background-color: #9BB8D8;
     height: 40%;
     
     .nav {
@@ -28,7 +28,7 @@
         @include mixins.flex-center;
         height: 100%;
         width: 30%;
-        background-color: #c2c2c2;
+        background-color: #9BB8D8;
         cursor: pointer;
         //borde de 2 px negro solido solo a la der e izq
         border-left: 2px solid black;
@@ -92,7 +92,7 @@
       display: flex;
       align-items: center;
       gap: 10%;
-      background-color: rgb(73, 73, 131);
+      background-color: #C0C6D6;
       width: 40%;
       height: 100%;
       
@@ -127,7 +127,7 @@
     }
 
     &--right {
-      background-color: red;
+      background-color: #C0C6D6;
       width: 60%;
       height: 100%;
       @include mixins.flex-center;
