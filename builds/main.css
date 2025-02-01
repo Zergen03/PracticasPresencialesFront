@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* _variables.scss */
 /* _mixins.scss */
 * {
@@ -22,7 +23,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #8bec93;
+  background-color: #9BB8D8;
   height: 40%;
 }
 .header__uppersection .nav {
@@ -42,7 +43,7 @@ body {
   align-items: center;
   height: 100%;
   width: 30%;
-  background-color: #c2c2c2;
+  background-color: #9BB8D8;
   cursor: pointer;
   border-left: 2px solid black;
   border-right: 2px solid black;
@@ -94,7 +95,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10%;
-  background-color: rgb(73, 73, 131);
+  background-color: #C0C6D6;
   width: 40%;
   height: 100%;
 }
@@ -122,7 +123,7 @@ body {
   margin: 0 5px;
 }
 .header__lowersection--right {
-  background-color: red;
+  background-color: #C0C6D6;
   width: 60%;
   height: 100%;
   display: flex;
@@ -136,7 +137,7 @@ body {
 
 /* _footer.scss */
 .footer {
-  background-color: #d6d6d6;
+  background-color: #F7BFA3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -179,12 +180,12 @@ body {
 .body__categories, .body__tasks {
   width: 45%;
   height: auto;
-  background-color: #d6d6d6;
   padding: 15px;
+  color: black;
 }
 .body__categories .categories__title, .body__categories .tasks__title, .body__tasks .categories__title, .body__tasks .tasks__title {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   font-size: 20px;
   font-weight: bold;
@@ -195,7 +196,7 @@ body {
 }
 .body__categories .categories__container, .body__categories .tasks__container, .body__tasks .categories__container, .body__tasks .tasks__container {
   margin-top: 15px;
-  background-color: #c2c2c2;
+  background-color: #212873;
   height: 75%;
 }
 
@@ -293,6 +294,7 @@ body {
   flex-direction: column;
   gap: 10%;
   border: 2px solid black;
+  background-color: #D9E4F1;
 }
 .contenedor__tienda__rotacion-diaria {
   display: flex;
@@ -315,7 +317,6 @@ body {
   flex-direction: column;
   width: 15%;
   min-width: 150px;
-  background-color: white;
   padding: 10px;
   border-radius: 5px;
 }
@@ -369,7 +370,6 @@ body {
   align-items: center;
   flex-direction: column;
   width: 50%;
-  background-color: white;
 }
 .contenedor__tienda__cofres__comprar__cofre__imagen {
   width: 100px;
@@ -440,7 +440,7 @@ body {
 }
 
 .contenedor__inventario {
-  background-color: blue;
+  background-color: #4E648E;
   width: 60%;
   height: auto;
   display: grid;

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Questify</title>
   <link rel="stylesheet" href="builds/main.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <script src="https://kit.fontawesome.com/6fc5fc30d9.js" crossorigin="anonymous"></script>
   <script src="./src/main.js" type="module"></script>
   <script src="./src/fetch.js"></script>
 </head>
+
 <body>
 
   <!-- HEADER -->
@@ -18,13 +21,19 @@
       <nav class="nav">
         <img src="source/images/logo.png" alt="LOGO">
         <div class="nav__button">
-          <a href="index.html"><p>Tareas</p></a>
+          <a href="index.html">
+            <p>Tareas</p>
+          </a>
         </div>
         <div class="nav__button">
-          <a href="inventario.html"><p>Inventario</p></a>
+          <a href="inventario.html">
+            <p>Inventario</p>
+          </a>
         </div>
         <div class="nav__button">
-          <a href="tienda.html"><p>Tienda</p></a>
+          <a href="tienda.html">
+            <p>Tienda</p>
+          </a>
         </div>
       </nav>
       <div class="info">
@@ -56,7 +65,7 @@
         </div>
       </div>
       <div class="header__lowersection--right">
-        <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, voluptate.</p>
+        <p id="description">Un castillo bien organizado nunca caerá.</p>
       </div>
     </div>
   </header>
@@ -70,17 +79,44 @@
         <i id="categoryDelete" class="fa-solid fa-minus"></i>
       </div>
       <div class="categories__container">
-        <!-- Lista de categorias -->
+        <div class="contenidoCategoria">
+          <!-- <div class="categoriasTextos">
+            <span>• Hola</span>
+            <img src="source/images/flecha-correcta.png" class="tamañoFlecha" alt="Flecha">
+          </div>
+          <div class="categoriasTextos">
+            <span>• Hola</span>
+            <img src="source/images/flecha-correcta.png" class="tamañoFlecha" alt="Flecha">
+          </div>
+          <div class="categoriasTextos">
+            <span>• Hola</span>
+            <img src="source/images/flecha-correcta.png" class="tamañoFlecha" alt="Flecha">
+          </div> -->
+        </div>        
       </div>
     </div>
     <div class="body__tasks">
       <div class="tasks__title">
         <p>TAREAS</p>
         <i id="taskAdd" class="fa-solid fa-plus" onclick="togglePopupTask()"></i>
-        <i id="taskDelete" class="fa-solid fa-minus"></i>
       </div>
       <div class="tasks__container" onclick="renderTasks()">
-        <!-- Lista de tareas -->
+        <!-- <div class="task__item">
+          <span>• Tarea 1</span>
+          <span class="icon">X</span>
+          <span class="icon">✓</span>
+
+        </div>
+        <div class="task__item">
+          <span>• Tarea 2</span>
+          <span class="icon">X</span>
+          <span class="icon">✓</span>
+        </div>
+        <div class="task__item">
+          <span>• Tarea 3</span>
+          <span class="icon">X</span>
+          <span class="icon">✓</span>
+        </div> -->
       </div>
     </div>
   </main>
@@ -145,4 +181,5 @@
   </footer>
 
 </body>
+
 </html>
