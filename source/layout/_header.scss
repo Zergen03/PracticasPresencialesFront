@@ -82,15 +82,18 @@
   }
   
   &__lowersection {
-    display: flex;
-    justify-content: center;
-    gap: 50%;
+    @include mixins.flex-center;
+    gap: 0%;
     background-color: #bdbdbd;
     height: 60%;
 
     &--left {
       display: flex;
       align-items: center;
+      gap: 10%;
+      background-color: rgb(73, 73, 131);
+      width: 40%;
+      height: 100%;
       
       img {
         width: 130px;
@@ -123,6 +126,10 @@
     }
 
     &--right {
+      background-color: red;
+      width: 60%;
+      height: 100%;
+      @include mixins.flex-center;
       p {
         font-size: 18px;
         font-weight: bold;
