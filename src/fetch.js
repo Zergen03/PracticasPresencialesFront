@@ -14,7 +14,7 @@ async function renderTasks(categoryId, tasksContainer) {
         if (!response.ok) throw new Error("Failed to fetch tasks");
 
         const Tasks = await response.json();
-        tasksContainer.innerHTML = ''; // Limpiar el contenedor
+        tasksContainer.innerHTML = '';
 
         Tasks.forEach(Task => {
             const TaskElement = document.createElement('div');
@@ -79,7 +79,7 @@ async function renderCategories(categoryContainer, tasksContainer) {
             arrowIcon.alt = 'Flecha';
             arrowIcon.classList.add('tamañoFlecha');
 
-            categoryElement.addEventListener('click', async function () {
+            categoryElement.addEventListener('click', async function (Category) {
                 currentCategoryId = Category.id;
                 await renderTasks(currentCategoryId, tasksContainer);
                 localStorage.setItem('currentCategoryId', currentCategoryId);
