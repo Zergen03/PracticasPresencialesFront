@@ -7,48 +7,51 @@ async function renderTasks(categoryId, tasksContainer) {
         if (!response.ok) throw new Error("Failed to fetch tasks");
 
         const Tasks = await response.json();
-        tasksContainer.innerHTML = ''; // Limpiar el contenedor
+        tasksContainer.innerHTML = ''; 
 
         Tasks.forEach(Task => {
             const TaskElement = document.createElement('div');
-            const taskDelete = document.createElement('span');
-
-
-            taskDelete.textContent = 'X';
-            taskDelete.classList.add('icon');
-            taskDelete.addEventListener('click', () => {
-                taskElement.remove(); 
-                console.log(`Task "${task.name}" deleted`);
-            });
-
-
-            taskDelete.innerHTML = 'Delete';
-            taskDelete.id = `taskDelete-${Task.id}`;
+            TaskElement.classList.add('task__item'); 
             TaskElement.id = `task-${Task.id}`;
+            
+            const taskText = document.createElement('span');
+            taskText.textContent = `• ${Task.name}`;
 
-            taskDelete.addEventListener('click', async function (event) {
-                const taskId = event.target.id.split('-')[1];
-                const taskElement = document.getElementById(`task-${taskId}`);
-
+            const taskDelete = document.createElement('span');
+            taskDelete.textContent = 'X'; 
+            taskDelete.classList.add('icon'); 
+            taskDelete.addEventListener('click', async function () {
                 try {
-                    const success = await deleteTask(taskId);
-                    if (success && taskElement) {
-                        taskElement.remove();
+                    const success = await deleteTask(Task.id); 
+                    if (success) {
+                        TaskElement.remove(); 
+                        console.log(`Task "${Task.name}" deleted`);
                     }
                 } catch (error) {
                     console.error("Error deleting task:", error);
                 }
             });
 
-            TaskElement.textContent = Task.name;
-            tasksContainer.appendChild(TaskElement);
+            const taskComplete = document.createElement('span');
+            taskComplete.textContent = '✓'; 
+            taskComplete.classList.add('icon'); 
+            taskComplete.addEventListener('click', () => {
+                TaskElement.classList.toggle('completed'); 
+                console.log(`Task "${Task.name}" completed`);
+            });
+
+            TaskElement.appendChild(taskText);
             TaskElement.appendChild(taskDelete);
+            TaskElement.appendChild(taskComplete);
+
+            tasksContainer.appendChild(TaskElement);
         });
 
     } catch (error) {
         console.error("Error fetching tasks:", error);
     }
 }
+
 
 
 //render categories
