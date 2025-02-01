@@ -52,7 +52,7 @@ async function renderTasks(categoryId, tasksContainer) {
 
 
 //render categories
-async function renderCategories(categoryContainer) {
+async function renderCategories(categoryContainer, tasksContainer) {
     try {
         const response = await fetch('http://localhost:5230/api/Category');
         if (!response.ok) throw new Error("Failed to fetch categories");
