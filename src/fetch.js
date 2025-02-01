@@ -1,4 +1,11 @@
 //render tasks depending on category
+function togglePopup() {
+    document.getElementById("popup").classList.toggle("active");
+}
+
+function togglePopupTask() {
+    document.getElementById("popup-task").classList.toggle("active");
+}
 async function renderTasks(categoryId, tasksContainer) {
     if (!categoryId) return console.error("No categoryId provided!");
 
@@ -90,7 +97,8 @@ async function deleteTask(taskId) {
     }
 }
 
-//add task
+//add task OLD
+/*
 async function addTask(taskName, categoryId) {
     fetch('http://localhost:5230/api/Task', {
         method: 'POST',
@@ -108,6 +116,33 @@ async function addTask(taskName, categoryId) {
         return response.json();
     }).then(function (response) {
         console.log(response);
+    });
+}
+*/
+
+//add category
+async function addCategory(categoryName) {
+    //alert(categoryName);
+    await fetch('http://localhost:5230/api/Category', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: categoryName })
+    }); 
+}
+
+//add task
+async function addTask(taskName, taskDescription, taskDifficulty, taskExpiration, categoryId) {
+    //alert(taskName + taskDescription + taskDifficulty + taskExpiration + categoryId);
+    await fetch('http://localhost:5230/api/Task', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: taskName,
+            description: taskDescription,
+            difficulty: parseInt(taskDifficulty),
+            expirationDate: taskExpiration,
+            category_Id: categoryId
+        })
     });
 }
 
