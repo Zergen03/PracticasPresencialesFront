@@ -1,0 +1,52 @@
+
+h1 {
+    font-size: 18px;
+}
+
+body {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.contenedor__inventario {
+    background-color: blue;
+    width: 60%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    gap: 5px; 
+    padding: 5px;
+    margin-top: 50px;
+
+    &__recuadro {
+        width: auto;
+        height: 10vh;
+        background-color: white;
+        border: 2px solid black;
+        min-height: 30%;
+    }
+
+            
+}
+.recuadro__inv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    &__imagen {
+        width: 5vh;
+        height: 5vh;
+        margin-top: 5vh;
+    }
+}
+.imagen__textos {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 3vh;
+}

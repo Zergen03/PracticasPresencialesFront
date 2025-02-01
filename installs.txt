@@ -1,0 +1,8 @@
+Instalar node/npm
+npm install -g sass
+npm install --save-dev gulp gulp-sass
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
+npm install sass --save-dev
+npm install gulp gulp-sass --save-dev
+gulp watch

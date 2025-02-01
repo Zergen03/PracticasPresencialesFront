@@ -1,0 +1,140 @@
+/* _header.scss */
+@use '../base/variables' as *;
+@use '../base/mixins' as mixins;
+
+.header {
+  background-color: #a32b2b;
+  height: 20vh;
+  width: 100%;
+  
+  &__uppersection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #8bec93;
+    height: 40%;
+    
+    .nav {
+      height: 100%;
+      width: 60%;
+      @include mixins.flex-center;
+      
+      img {
+        width: 100px;
+        height: 100%;
+      }
+      
+      &__button {
+        @include mixins.flex-center;
+        height: 100%;
+        width: 30%;
+        background-color: #c2c2c2;
+        cursor: pointer;
+        //borde de 2 px negro solido solo a la der e izq
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+
+        p{
+          font-size: 26px;
+        }
+
+      }
+
+      &__button:hover {
+        opacity: 0.9;
+        border: 2px solid black;
+      }
+
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50%;
+      width: 30%;
+      
+      &__coins {
+        display: flex;
+        align-items: center;
+        
+        i {
+          font-size: 20px;
+        }
+        
+        p {
+          margin-left: 5px;
+        }
+      }
+      
+      &__profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15%;
+        
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  
+  &__lowersection {
+    @include mixins.flex-center;
+    gap: 0%;
+    background-color: #bdbdbd;
+    height: 60%;
+
+    &--left {
+      display: flex;
+      align-items: center;
+      gap: 10%;
+      background-color: rgb(73, 73, 131);
+      width: 40%;
+      height: 100%;
+      
+      img {
+        width: 130px;
+        height: 90%;
+      }
+
+      .lowersection__stats {
+        margin-left: 15px;
+
+        #level {
+          font-weight: bold;
+        }
+
+        .stats__life, .stats__xp {
+          display: flex;
+          align-items: center;
+          
+          i {
+            margin-right: 5px;
+          }
+          
+          #progressbar {
+            width: 100px;
+            height: 10px;
+            background-color: #888;
+            margin: 0 5px;
+          }
+        }
+      }
+    }
+
+    &--right {
+      background-color: red;
+      width: 60%;
+      height: 100%;
+      @include mixins.flex-center;
+      p {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}

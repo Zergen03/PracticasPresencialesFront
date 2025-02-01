@@ -1,0 +1,41 @@
+/* _footer.scss */
+@use '../base/variables' as *;
+@use '../base/mixins' as mixins;
+
+.footer {
+  background-color: #d6d6d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+  gap: 25%;
+  bottom: 0;
+  position: fixed;
+
+  &__img--right, &__img--left {
+    width: 180px;
+    height: 180px;
+  }
+
+  &__container {
+    text-align: center;
+
+    .container__top {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      i {
+        width: 40px;
+        height: 40px;
+        scale: 1.5;
+      }
+    }
+
+    .container__bottom {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  }
+}
