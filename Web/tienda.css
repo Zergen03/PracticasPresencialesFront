@@ -1,0 +1,175 @@
+html {
+  height: 100vh;
+}
+
+header {
+  height: 20vh;
+  width: 100%;
+  background-color: red;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contenedor__tienda {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.contenedor__tienda__contenedores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.contenedor__tienda__tienda {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.contenedor__tienda__rotacion-diaria {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.contenedor__tienda__rotacion-diaria__contenedor-objetos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+.contenedor__tienda__rotacion-diaria__objetos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 15%;
+  min-width: 150px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+.contenedor__tienda__rotacion-diaria__objetos__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedor__tienda__rotacion-diaria__objetos__img__imagen {
+  width: 50px;
+  height: 50px;
+}
+.contenedor__tienda__rotacion-diaria__objetos__txt {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.contenedor__tienda__rotacion-diaria__objetos__txt--left {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.contenedor__tienda__rotacion-diaria__objetos__txt--right {
+  font-size: 1rem;
+  color: gold;
+}
+.contenedor__tienda__cofres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.contenedor__tienda__cofres--cofres {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.contenedor__tienda__cofres--cofres__texto {
+  color: black;
+}
+.contenedor__tienda__cofres__comprar {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+.contenedor__tienda__cofres__comprar__cofre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  background-color: white;
+}
+.contenedor__tienda__cofres__comprar__cofre__imagen {
+  width: 100px;
+  height: 100px;
+}
+.contenedor__tienda__cofres__comprar__cofre__img {
+  scale: 21;
+}
+.contenedor__tienda__cofres__comprar__cofre__txt {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+.contenedor__tienda__cofres__comprar__cofre__texto {
+  color: cadetblue;
+}
+.contenedor__tienda__ambulante {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  width: 35%;
+  height: 100%;
+}
+.contenedor__tienda__ambulante__img {
+  width: 400px;
+  height: auto;
+}
+
+.contenedor__tienda__cofres__comprar__cofre__imagen__img {
+  width: 100px;
+  height: 100px;
+}
+
+.contenedor__tienda__cofres__comprar__cofre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor__tienda__cofres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.contenedor__tienda__cofres__comprar {
+  gap: 15px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=tienda.css.map */
