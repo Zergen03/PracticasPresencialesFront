@@ -110,3 +110,51 @@ async function addTask(taskName, categoryId) {
         console.log(response);
     });
 }
+
+async function findItems(userId, inventoryContainer) {
+    const response = await fetch(`http://localhost:5230/api/UserItems/${userId}`);
+    if (!response.ok) throw new Error("Failed to fetch inventory");
+
+    var Inventory = await response.json();
+    inventoryContainer.innerHTML = '';
+
+    Inventory.forEach(async function(Item) {
+        await renderInventory(Item.item_Id, inventoryContainer);
+    });
+
+}
+
+async function renderInventory(itemId, inventoryContainer) {
+    try {
+        const response = await fetch(`http://localhost:5230/api/Items/${itemId}`);
+        if (!response.ok) throw new Error("Failed to fetch inventory");
+
+        const Item = await response.json();
+
+        const ItemElement = document.createElement('div');
+        ItemElement.id = `item-${Item.id}`;
+        ItemElement.classList.add('contenedor__inventario__recuadro');
+        const recuadro__inv = document.createElement('div');
+        recuadro__inv.classList.add('recuadro__inv');
+        const itemImage = document.createElement('img');
+        itemImage.src = 'source/images/armor.png';
+        itemImage.classList.add('recuadro__inv__imagen');
+        const imagen__textos = document.createElement('div');
+        imagen__textos.classList.add('imagen__textos');
+        const imagen__textos_left = document.createElement('h1');
+        imagen__textos_left.classList.add('imagen__textos-left');
+        imagen__textos_left.textContent = Item.typeObject;
+        const imagen__textos_right = document.createElement('h1');
+        imagen__textos_right.classList.add('imagen__textos-right');
+        imagen__textos_right.textContent = `${Item.valueObject}€`;
+        inventoryContainer.appendChild(ItemElement);
+        ItemElement.appendChild(recuadro__inv);
+        recuadro__inv.appendChild(itemImage);
+        recuadro__inv.appendChild(imagen__textos);
+        imagen__textos.appendChild(imagen__textos_left);
+        imagen__textos.appendChild(imagen__textos_right);
+
+    } catch (error) {
+        console.error("Error fetching inventory:", error);
+    }
+}
