@@ -9,6 +9,7 @@ var categoryDeleteButtons = document.querySelectorAll('[id^="categoryDelete-"]')
 
 document.addEventListener('DOMContentLoaded', function () {
     renderCategories(CategoryContainer, tasksContainer);
+    
     taskInput.addEventListener('click', async function (event) {
             await addTask(taskInput.value);
     });

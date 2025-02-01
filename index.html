@@ -66,7 +66,7 @@
     <div class="body__categories">
       <div class="categories__title">
         <p>CATEGORIAS</p>
-        <i id="categoryAdd" class="fa-solid fa-plus"></i>
+        <i id="categoryAdd" class="fa-solid fa-plus" onclick="togglePopup()"></i>
         <i id="categoryDelete" class="fa-solid fa-minus"></i>
       </div>
       <div class="categories__container">
@@ -76,7 +76,7 @@
     <div class="body__tasks">
       <div class="tasks__title">
         <p>TAREAS</p>
-        <i id="taskAdd" class="fa-solid fa-plus"></i>
+        <i id="taskAdd" class="fa-solid fa-plus" onclick="togglePopupTask()"></i>
         <i id="taskDelete" class="fa-solid fa-minus"></i>
       </div>
       <div class="tasks__container" onclick="renderTasks()">
@@ -84,6 +84,59 @@
       </div>
     </div>
   </main>
+
+
+<!-- POPUP PARA AÑADIR CATS -->
+<div id="popup" class="popup-container">
+  <div class="popup">
+      <span class="close-btn" onclick="togglePopup()">&times;</span>
+      <h2>Añadir Categoría</h2>
+      <form id="itemForm">
+          <label for="itemName">Nombre de la categoría:</label>
+          <input type="text" id="itemName" required>
+          <!--
+          <label for="itemCategory">Categoría:</label>
+          <select id="itemCategory">
+              <option value="tarea">Tarea</option>
+              <option value="herramienta">Herramienta</option>
+              <option value="otro">Otro</option>
+          </select>
+          
+          <label for="itemDescription">Descripción:</label>
+          <textarea id="itemDescription" rows="3"></textarea>
+           -->
+          <button type="submit">Añadir</button>
+      </form>
+  </div>
+</div>
+
+<!-- POPUP PARA AÑADIR NUEVA TAREA -->
+<div id="popup-task" class="popup-container">
+  <div class="popup">
+      <span class="close-btn" onclick="togglePopupTask()">&times;</span>
+      <h2>Añadir Tarea</h2>
+      <form id="taskForm">
+          <label for="taskName">Nombre de la tarea:</label>
+          <input type="text" id="taskName" required>
+
+          <label for="taskDescription">Descripción:</label>
+          <textarea id="taskDescription" rows="3"></textarea>
+
+          <label for="taskExpiration">Fecha de vencimiento:</label>
+          <input type="date" id="taskExpiration" required>
+
+          <label for="taskDifficulty">Dificultad:</label>
+          <select id="taskDifficulty">
+              <option value="1">Fácil</option>
+              <option value="2">Medio</option>
+              <option value="3">Difícil</option>
+          </select>
+
+          <button type="submit">Añadir Tarea</button>
+      </form>
+  </div>
+</div>
+
 
   <!-- FOOTER -->
   <footer class="footer">

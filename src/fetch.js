@@ -1,4 +1,11 @@
 //render tasks depending on category
+function togglePopup() {
+    document.getElementById("popup").classList.toggle("active");
+}
+
+function togglePopupTask() {
+    document.getElementById("popup-task").classList.toggle("active");
+}
 async function renderTasks(categoryId, tasksContainer) {
     if (!categoryId) return console.error("No categoryId provided!");
 
