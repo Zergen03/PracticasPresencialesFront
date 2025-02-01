@@ -79,8 +79,8 @@ async function renderCategories(categoryContainer, tasksContainer) {
             arrowIcon.alt = 'Flecha';
             arrowIcon.classList.add('tamañoFlecha');
 
-            categoryElement.addEventListener('click', async function (Category) {
-                currentCategoryId = Category.id;
+            categoryElement.addEventListener('click', async function () {
+                currentCategoryId = category.id;
                 await renderTasks(currentCategoryId, tasksContainer);
                 localStorage.setItem('currentCategoryId', currentCategoryId);
                 currentCategoryId = category.id;
@@ -120,26 +120,6 @@ async function deleteTask(taskId) {
     }
 }
 
-async function deleteCategory() {
-    var categoryId = localStorage.getItem('currentCategoryId');
-    try {
-        const response = await fetch(`http://localhost:5230/api/Category/${categoryId}`, {
-            method: 'DELETE'
-        });
-
-        if (!response.ok) {
-            console.error("Failed to delete category:", response.statusText);
-            return false;
-        }
-        localStorage.removeItem('currentCategoryId');
-        console.log("Category deleted successfully");
-        return true;
-
-    } catch (error) {
-        console.error("Error deleting category:", error);
-        return false;
-    }
-}
 
 //add category
 async function addCategory(categoryName) {
