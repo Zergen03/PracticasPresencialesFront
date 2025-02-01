@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questify</title>
+  <link rel="stylesheet" href="builds/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script src="https://kit.fontawesome.com/6fc5fc30d9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__uppersection">
+      <nav class="nav">
+        <img src="https://picsum.photos/120/70" alt="LOGO">
+        <div class="nav__button">
+          <p>Tareas</p>
+        </div>
+        <div class="nav__button">
+          <p>Inventario</p>
+        </div>
+        <div class="nav__button">
+          <p>Tienda</p>
+        </div>
+      </nav>
+      <div class="info">
+        <div class="info__coins">
+          <i class="fa-solid fa-coins"></i>
+          <p id="coins">0</p>
+        </div>
+        <div class="info__profile">
+          <p id="username">Invitado</p>
+          <img src="source/images/pfp_placeholder.png" alt="profile">
+        </div>
+      </div>
+    </div>
+    <div class="header__lowersection">
+      <div class="header__lowersection--left">
+        <img src="source/images/map.jpg" alt="map">
+        <div class="lowersection__stats">
+          <p id="level">Username - Nivel 0</p>
+          <div class="stats__life">
+            <i class="fa-solid fa-heart"></i>
+            <div id="progressbar"></div>
+            <p id="life">0/100</p>
+          </div>
+          <div class="stats__xp">
+            <p>XP</p>
+            <div id="progressbar"></div>
+            <p id="xp">0/100</p>
+          </div>
+        </div>
+      </div>
+      <div class="header__lowersection--right">
+        <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, voluptate.</p>
+      </div>
+    </div>
+  </header>
+  <!-- BODY -->
+  <main class="body">
+    <div class="body__categories">
+      <div class="categories__title">
+        <p>CATEGORIAS</p>
+        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-minus"></i>
+      </div>
+      <div class="categories__container">
+        <!-- Lista de categorias -->
+      </div>
+    </div>
+    <div class="body__tasks">
+      <div class="tasks__title">
+        <p>TAREAS</p>
+        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-minus"></i>
+      </div>
+      <div class="tasks__container">
+        <!-- Lista de tareas -->
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img class="footer__img--right" src="source/images/archer.png" alt="IMG">
+    <div class="footer__container">
+      <div class="container__top">
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-x-twitter"></i>
+      </div>
+      <div class="container__bottom">
+        <p id="copyright">Questify ©</p>
+      </div>
+    </div>
+    <img class="footer__img--left" src="source/images/drake.png" alt="IMG">
+  </footer>
+
+</body>
+</html>

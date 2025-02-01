@@ -1,0 +1,13 @@
+@use 'variables'; // Importa las variables con su espacio de nombres
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: variables.$font-family; // Usa el prefijo del espacio de nombres
+    color: variables.$text-color;
+    line-height: 1.5;
+}
