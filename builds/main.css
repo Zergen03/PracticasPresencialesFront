@@ -14,151 +14,163 @@ body {
 
 /* _header.scss */
 .header {
-  background-color: #1c4f5f;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
+  background-color: #a32b2b;
   height: 20vh;
 }
 .header__uppersection {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 10vh;
-  background-color: rgb(102, 255, 0);
+  background-color: #8bec93;
+  height: 40%;
 }
 .header__uppersection .nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 60%;
   height: 100%;
-  background-color: #1c4f5f;
-  color: #fff;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__uppersection .nav img {
+  width: 150px;
+  height: 100%;
+}
+.header__uppersection .nav__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+  background-color: #c2c2c2;
+  cursor: pointer;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+.header__uppersection .nav__button p {
+  font-size: 26px;
+}
+.header__uppersection .nav__button:hover {
+  opacity: 0.9;
+  border: 2px solid black;
 }
 .header__uppersection .info {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 40%;
-  height: 100%;
-  background-color: #2b383b;
-  color: #fff;
+  justify-content: center;
+  gap: 50%;
+  width: 30%;
+}
+.header__uppersection .info__coins {
+  display: flex;
+  align-items: center;
+}
+.header__uppersection .info__coins i {
+  font-size: 20px;
+}
+.header__uppersection .info__coins p {
+  margin-left: 5px;
+}
+.header__uppersection .info__profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+}
+.header__uppersection .info__profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 .header__lowersection {
   display: flex;
-  align-items: end;
-  justify-content: flex-start;
-  padding-top: 10px;
-  height: 50%;
-  background-color: red;
+  justify-content: center;
+  gap: 50%;
+  background-color: #bdbdbd;
+  height: 60%;
+}
+.header__lowersection--left {
+  display: flex;
+  align-items: center;
+}
+.header__lowersection--left img {
+  width: 130px;
+  height: 90%;
+}
+.header__lowersection--left .lowersection__stats {
+  margin-left: 15px;
+}
+.header__lowersection--left .lowersection__stats #level {
+  font-weight: bold;
+}
+.header__lowersection--left .lowersection__stats .stats__life, .header__lowersection--left .lowersection__stats .stats__xp {
+  display: flex;
+  align-items: center;
+}
+.header__lowersection--left .lowersection__stats .stats__life i, .header__lowersection--left .lowersection__stats .stats__xp i {
+  margin-right: 5px;
+}
+.header__lowersection--left .lowersection__stats .stats__life #progressbar, .header__lowersection--left .lowersection__stats .stats__xp #progressbar {
+  width: 100px;
+  height: 10px;
+  background-color: #888;
+  margin: 0 5px;
+}
+.header__lowersection--right p {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-/* _footer.scss */
 .footer {
-  background-color: #1c4f5f;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  height: 20vh;
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-}
-.footer__top {
-  width: 100%;
+  background-color: #d6d6d6;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.footer__top .newsletter__text h3 {
-  font-size: 24px;
+.footer__img--right, .footer__img--left {
+  width: 80px;
+  height: 80px;
 }
-.footer__top .newsletter__text p {
-  font-size: 16px;
-}
-.footer__top .newsletter__form {
-  margin-right: 250px;
-}
-.footer__top .newsletter__form .newsletter__input {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  width: 450px;
-}
-.footer__top .newsletter__form .newsletter__button {
-  background-color: #fff;
-  color: #1c4f5f;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.footer__top .newsletter__form .newsletter__button:hover {
-  background-color: white;
-  color: #fff;
-}
-.footer__top .newsletter__form .newsletter__button:hover {
-  color: #1c4f5f;
-}
-.footer__top .social {
-  display: flex;
-  margin-right: 10px;
-  color: #fff;
-  gap: 15px;
-  scale: 1.3;
-}
-.footer__top .social i {
-  color: #fff;
-}
-.footer__divider {
-  border: 0;
-  height: 1px;
-  background: #fff;
-  margin: 20px 0;
-}
-.footer__bottom {
+.footer__container {
   text-align: center;
+}
+.footer__container .container__top {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.footer__container .container__top img {
+  width: 40px;
+  height: 40px;
+}
+.footer__container .container__bottom {
+  margin-top: 10px;
   font-size: 14px;
 }
 
-/* home.scss */
 .body {
+  display: flex;
+  justify-content: space-around;
   padding: 20px;
-  text-align: center;
-  height: 60vh;
+  background-color: #f0f0f0;
 }
-.body .carousel {
+.body__categories, .body__tasks {
+  width: 45%;
+  background-color: #d6d6d6;
+  padding: 15px;
+}
+.body__categories .categories__title, .body__categories .tasks__title, .body__tasks .categories__title, .body__tasks .tasks__title {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
-  width: 100%;
-  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
 }
-.body .carousel__arrow {
-  background: none;
-  border: none;
-  font-size: 24px;
+.body__categories .categories__title i, .body__categories .tasks__title i, .body__tasks .categories__title i, .body__tasks .tasks__title i {
   cursor: pointer;
-  padding: 100px;
 }
-.body .carousel__images {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 90px;
-}
-.body .carousel__images .carousel__image {
-  width: 350px;
+.body__categories .categories__container, .body__categories .tasks__container, .body__tasks .categories__container, .body__tasks .tasks__container {
+  margin-top: 15px;
+  background-color: #c2c2c2;
   height: 200px;
-  object-fit: cover;
-  opacity: 0.5;
-}
-.body .carousel__images .carousel__image--center {
-  width: 450px;
-  height: 350px;
-  opacity: 1;
 }
