@@ -19,12 +19,13 @@ async function renderTasks(categoryId, tasksContainer) {
         Tasks.forEach(Task => {
             const TaskElement = document.createElement('div');
             const taskDelete = document.createElement('span');
+            TaskElement.classList.add("task__item");
 
 
             taskDelete.textContent = 'X';
             taskDelete.classList.add('icon');
             taskDelete.addEventListener('click', () => {
-                taskElement.remove(); 
+                taskElement.remove();
                 console.log(`Task "${task.name}" deleted`);
             });
 
@@ -65,11 +66,11 @@ async function renderCategories(categoryContainer, tasksContainer) {
         if (!response.ok) throw new Error("Failed to fetch categories");
 
         const categories = await response.json();
-        categoryContainer.innerHTML = ''; 
+        categoryContainer.innerHTML = '';
 
         categories.forEach(category => {
             const categoryElement = document.createElement('div');
-            categoryElement.classList.add('categoriasTextos'); 
+            categoryElement.classList.add('categoriasTextos');
 
             const categoryText = document.createElement('span');
             categoryText.textContent = `• ${category.name}`;
@@ -84,7 +85,7 @@ async function renderCategories(categoryContainer, tasksContainer) {
                 await renderTasks(currentCategoryId, tasksContainer);
                 localStorage.setItem('currentCategoryId', currentCategoryId);
                 currentCategoryId = category.id;
-                await renderTasks(currentCategoryId, tasksContainer); 
+                await renderTasks(currentCategoryId, tasksContainer);
             });
 
             categoryElement.appendChild(categoryText);
@@ -294,7 +295,7 @@ async function addTask(taskName, categoryId) {
         deleteIcon.textContent = 'X';
         deleteIcon.classList.add('icon');
         deleteIcon.addEventListener('click', () => {
-            taskElement.remove(); 
+            taskElement.remove();
             console.log(`Task "${task.name}" deleted`);
         });
 
@@ -302,7 +303,7 @@ async function addTask(taskName, categoryId) {
         completeIcon.textContent = '✓';
         completeIcon.classList.add('icon');
         completeIcon.addEventListener('click', () => {
-            taskElement.classList.toggle('completed'); 
+            taskElement.classList.toggle('completed');
             console.log(`Task "${task.name}" completed`);
         });
 
