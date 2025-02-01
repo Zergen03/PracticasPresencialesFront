@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* _variables.scss */
 /* _mixins.scss */
 * {
@@ -197,6 +198,76 @@ body {
   margin-top: 15px;
   background-color: #212873;
   height: 75%;
+}
+
+.contenidoCategoria {
+  background-color: #1E3269;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.categoriasTextos {
+  background-color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  width: 100%;
+  margin: 12px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.categoriasTextos:last-child {
+  margin-bottom: 0;
+}
+
+.categoriasTextos span {
+  font-size: 14px;
+  color: #333;
+}
+
+.tamañoFlecha {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.tasks__container {
+  background-color: #1E3269;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.task__item {
+  background-color: white;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  width: 95%;
+  margin: 12px auto;
+}
+
+.task__item:last-child {
+  margin-bottom: 0;
+}
+
+.task__item span {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.task__item .icon {
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
 }
 
 body {
