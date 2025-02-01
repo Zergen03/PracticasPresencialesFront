@@ -5,7 +5,7 @@ var categoryForm = document.querySelector('.category__form');
 var taskInput = document.getElementById('taskAdd');
 var categoryInput = document.getElementById('categoryAdd');
 var taskDeleteButtons = document.querySelectorAll('[id^="taskDelete-"]');
-var categoryDeleteButtons = document.querySelectorAll('[id^="categoryDelete-"]');
+var categoryDeleteButtons = document.querySelector('[id^="categoryDelete"]');
 
 document.addEventListener('DOMContentLoaded', function () {
     renderCategories(CategoryContainer, tasksContainer);
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let taskDescription = document.getElementById("taskDescription").value;
         let taskExpiration = document.getElementById("taskExpiration").value;
         let taskDifficulty = document.getElementById("taskDifficulty").value;
-        let currentCategoryId = 0; //cambiar
+        let currentCategoryId = localStorage.getItem('currentCategoryId');
 
         await addTask(taskName, taskDescription, taskDifficulty, taskExpiration, currentCategoryId);
         togglePopupTask();
@@ -34,6 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
         renderCategories(CategoryContainer, tasksContainer);
     });
     
+    categoryDeleteButtons.addEventListener('click', async function (event) {
+        try {
+            const success = await deleteCategory();
+            if (success) {
+               await renderCategories(CategoryContainer, tasksContainer);
+            }
+        } catch (error) {
+            console.error("Error deleting category:", error);
+        }
+    });
     //taskInput.addEventListener('click', async function (event) {
     //        await addTask(taskInput.value);
     //});

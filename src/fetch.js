@@ -66,6 +66,7 @@ async function renderCategories(CategoryContainer, tasksContainer) {
             categoryElement.addEventListener('click', async function () {
                 currentCategoryId = Category.id;
                 await renderTasks(currentCategoryId, tasksContainer);
+                localStorage.setItem('currentCategoryId', currentCategoryId);
             });
 
             CategoryContainer.appendChild(categoryElement);
@@ -97,28 +98,26 @@ async function deleteTask(taskId) {
     }
 }
 
-//add task OLD
-/*
-async function addTask(taskName, categoryId) {
-    fetch('http://localhost:5230/api/Task', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            name: "taskName",
-            description: 'description',
-            difficulty: 1,
-            expirationDate: new Date(),
-            category_Id: 1
-        })
-    }).then(function (response) {
-        return response.json();
-    }).then(function (response) {
-        console.log(response);
-    });
+async function deleteCategory() {
+    var categoryId = localStorage.getItem('currentCategoryId');
+    try {
+        const response = await fetch(`http://localhost:5230/api/Category/${categoryId}`, {
+            method: 'DELETE'
+        });
+
+        if (!response.ok) {
+            console.error("Failed to delete category:", response.statusText);
+            return false;
+        }
+        localStorage.removeItem('currentCategoryId');
+        console.log("Category deleted successfully");
+        return true;
+
+    } catch (error) {
+        console.error("Error deleting category:", error);
+        return false;
+    }
 }
-*/
 
 //add category
 async function addCategory(categoryName) {
@@ -126,8 +125,11 @@ async function addCategory(categoryName) {
     await fetch('http://localhost:5230/api/Category', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: categoryName })
-    }); 
+        body: JSON.stringify({
+            name: categoryName,
+            user_Id: 1
+        })
+    });
 }
 
 //add task
@@ -153,7 +155,7 @@ async function findItems(userId, inventoryContainer) {
     var Inventory = await response.json();
     inventoryContainer.innerHTML = '';
 
-    Inventory.forEach(async function(Item) {
+    Inventory.forEach(async function (Item) {
         await renderInventory(Item.item_Id, inventoryContainer);
     });
 
