@@ -18,8 +18,9 @@ async function renderTasks(categoryId, tasksContainer) {
 
         Tasks.forEach(Task => {
             const TaskElement = document.createElement('div');
+            TaskElement.classList.add("task__item");
+            taskElement.id = `task-${task.id}`;
             const taskDelete = document.createElement('span');
-
 
             taskDelete.textContent = 'X';
             taskDelete.classList.add('icon');
