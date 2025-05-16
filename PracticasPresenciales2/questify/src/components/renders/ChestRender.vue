@@ -15,7 +15,7 @@ const items = ref<Items[]>([
         <h2 class="title">Rotación diaria</h2>
         <div class="items-container">
             <div class="item-card" v-for="item in items" :key="item.Id">
-                <v-icon size="48">mdi-sword</v-icon>
+                <v-icon size="48">mdi-treasure-chest-outline</v-icon>
                 <div class="tags">
                     <span class="item-name">{{ item.TypeObject }}</span>
                     <span class="item-price">{{ item.ValueObject }}€</span>
@@ -31,13 +31,16 @@ const items = ref<Items[]>([
     padding: 24px 16px;
     text-align: center;
     width: 100%;
+
 }
 
 .title {
     font-size: 40px;
     font-weight: 700;
     color: #445b87;
+    margin-bottom: 20px;
     margin-bottom: 60px;
+
 }
 
 .items-container {
@@ -59,6 +62,7 @@ const items = ref<Items[]>([
     font-size: 14px;
     color: #1a1a1a;
 }
+
 .tags {
     display: flex;
     align-items: center;
