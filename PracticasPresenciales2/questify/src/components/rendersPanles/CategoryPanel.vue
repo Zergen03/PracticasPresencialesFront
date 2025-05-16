@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import TasksRender from '../renders/TasksRender.vue';
+import CategoryRender from '../renders/CategoryRender.vue';
 </script>
 <template>
     <div class="category-panel">
-        <TasksRender />
+        <CategoryRender />
     </div>
 </template>
 
