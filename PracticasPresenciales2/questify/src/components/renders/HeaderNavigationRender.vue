@@ -10,7 +10,7 @@ import { RouterLink } from 'vue-router'
         Questify
       </v-btn>
 
-      <RouterLink class="nav-btn active" to="/">Tareas</RouterLink>
+      <RouterLink class="nav-btn" to="/">Tareas</RouterLink>
       <RouterLink class="nav-btn" to="/inventory">Inventario</RouterLink>
       <RouterLink class="nav-btn" to="/store">Tienda</RouterLink>
     </div>
@@ -26,12 +26,9 @@ import { RouterLink } from 'vue-router'
   </div>
 </template>
 
-
-
 <style scoped>
 .nav-bar {
   height: 100px;
-  /* Fijo para coherencia visual */
   background-color: #a5c4de;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
@@ -40,14 +37,6 @@ import { RouterLink } from 'vue-router'
   align-items: center;
   flex-wrap: nowrap;
   width: 100%;
-}
-
-.left {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  width: 25%;
 }
 
 .test {
@@ -98,15 +87,11 @@ import { RouterLink } from 'vue-router'
   background-color: rgba(255, 255, 255, 0.35);
 }
 
-.nav-btn.active {
+/* ✅ Estilo para el botón activo dinámico */
+.router-link-exact-active.nav-btn {
   border: 2px solid #1a1a1a;
 }
 
-.coin-count {
-  font-size: 14px;
-  font-weight: 500;
-  margin-left: 4px;
-}
 .right-section {
   display: flex;
   align-items: center;
@@ -127,5 +112,4 @@ import { RouterLink } from 'vue-router'
   font-weight: 500;
   margin: 0;
 }
-
 </style>
