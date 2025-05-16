@@ -1,5 +1,8 @@
-<script setup lang="ts"> 
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import castleImg from '../../components/imgs/castillo.png'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -8,7 +11,7 @@ import castleImg from '../../components/imgs/castillo.png'
       <img :src="castleImg" alt="Castillo" class="castle-img" />
 
       <div class="stats-info">
-        <div class="player-label">USERNAME LVL 0</div>
+        <div class="player-label">{{ t('stats.username') }} 0</div>
 
         <!-- VIDA -->
         <div class="progress-row">
@@ -21,7 +24,7 @@ import castleImg from '../../components/imgs/castillo.png'
 
         <!-- EXPERIENCIA -->
         <div class="progress-row">
-          <span class="xp-label">XP</span>
+          <span class="xp-label">{{ t('stats.xp') }}</span>
           <div class="bar-container">
             <v-progress-linear :model-value="0" color="white" bg-color="#ffffff88" :height="8" rounded />
           </div>
@@ -31,8 +34,7 @@ import castleImg from '../../components/imgs/castillo.png'
     </div>
 
     <div class="quote">
-      <span>Un castillo bien</span><br />
-      <span>organizado nunca caerá.</span>
+      <span>{{ t('stats.quote') }}</span><br />
     </div>
   </div>
 </template>

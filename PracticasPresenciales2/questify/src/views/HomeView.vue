@@ -1,9 +1,19 @@
+<script setup lang="ts">
+import CategoryPanel from '@/components/rendersPanles/CategoryPanel.vue';
+import TaskPanel from '@/components/rendersPanles/TaskPanel.vue';
+import { useI18n } from 'vue-i18n';
+const { t, locale } = useI18n()
+
+const toggleLanguage = () => {
+  locale.value = locale.value === 'es' ? 'en' : 'es'
+}
+</script>
 <template>
     <v-container class="main-layout">
       <!-- PANEL DE CATEGORÍAS -->
       <div class="panel">
         <div class="panel-header">
-          <span class="panel-title">Categorías</span>
+          <span class="panel-title">{{ t('panel.categories') }}</span>
           <div class="actions">
             <v-icon>mdi-plus-circle-outline</v-icon>
             <v-icon>mdi-minus-circle-outline</v-icon>
@@ -15,7 +25,7 @@
       <!-- PANEL DE TAREAS -->
       <div class="panel">
         <div class="panel-header">
-          <span class="panel-title">Tareas</span>
+          <span class="panel-title">{{ t('panel.tasks') }}</span>
           <div class="actions">
             <v-icon>mdi-plus-circle-outline</v-icon>
             <v-icon>mdi-minus-circle-outline</v-icon>
@@ -26,10 +36,6 @@
     </v-container>
 </template>
 
-<script setup lang="ts">
-import CategoryPanel from '@/components/rendersPanles/CategoryPanel.vue';
-import TaskPanel from '@/components/rendersPanles/TaskPanel.vue';
-</script>
 
 <style scoped>
 .main-layout {

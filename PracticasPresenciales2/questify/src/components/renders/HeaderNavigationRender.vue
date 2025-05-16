@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
+
+const toggleLanguage = () => {
+  locale.value = locale.value === 'es' ? 'en' : 'es'
+}
 </script>
 
 <template>
@@ -7,12 +14,17 @@ import { RouterLink } from 'vue-router'
     <!-- Sección izquierda -->
     <div class="d-flex flex-row align-center h-100 w-100 test">
       <v-btn class="questify-btn" variant="outlined" rounded="0" height="100%">
-        Questify
+        {{ t('nav.questify') }}
       </v-btn>
 
-      <RouterLink class="nav-btn" to="/">Tareas</RouterLink>
-      <RouterLink class="nav-btn" to="/inventory">Inventario</RouterLink>
-      <RouterLink class="nav-btn" to="/store">Tienda</RouterLink>
+      <RouterLink class="nav-btn" to="/">{{ t('nav.tasks') }}</RouterLink>
+      <RouterLink class="nav-btn" to="/inventory">{{ t('nav.inventory') }}</RouterLink>
+      <RouterLink class="nav-btn" to="/store">{{ t('nav.store') }}</RouterLink>
+
+      <!-- Botón de idioma junto a los links -->
+      <v-btn variant="text" @click="toggleLanguage" class="lang-btn ml-2">
+        {{ locale === 'es' ? 'EN' : 'ES' }}
+      </v-btn>
     </div>
 
     <!-- Sección derecha -->
@@ -35,7 +47,6 @@ import { RouterLink } from 'vue-router'
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
   width: 100%;
 }
 
@@ -87,7 +98,6 @@ import { RouterLink } from 'vue-router'
   background-color: rgba(255, 255, 255, 0.35);
 }
 
-/* ✅ Estilo para el botón activo dinámico */
 .router-link-exact-active.nav-btn {
   border: 2px solid #1a1a1a;
 }
@@ -111,5 +121,13 @@ import { RouterLink } from 'vue-router'
   font-size: 16px;
   font-weight: 500;
   margin: 0;
+}
+
+.lang-btn {
+  min-width: 36px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  color: #13294b;
 }
 </style>
