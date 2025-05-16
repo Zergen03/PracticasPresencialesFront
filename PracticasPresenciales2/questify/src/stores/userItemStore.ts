@@ -1,4 +1,4 @@
-import { UserItem } from "@/models/UserItem"
+import type { UserItem } from "@/models/UserItem"
 import { defineStore } from "pinia"
 import { ref } from "vue"
 

@@ -1,4 +1,4 @@
-import { Category } from "@/models/Category"
+import type { Category } from "@/models/Category"
 import { defineStore } from "pinia"
 import { ref } from "vue"
 

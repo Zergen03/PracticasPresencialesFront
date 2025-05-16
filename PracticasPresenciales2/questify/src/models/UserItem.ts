@@ -1,5 +1,6 @@
-import { Items } from "./Items";
-import { User } from "./User";
+import type { Items } from "./Items";
+import type { User } from "./User";
+
 
 export interface UserItem {
     Id: number;

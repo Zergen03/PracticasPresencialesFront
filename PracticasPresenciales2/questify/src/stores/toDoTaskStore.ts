@@ -1,4 +1,4 @@
-import { ToDoTask } from "@/models/ToDoTask"
+import type { ToDoTask } from "@/models/ToDoTask"
 import { defineStore } from "pinia"
 import { ref } from "vue"
 
