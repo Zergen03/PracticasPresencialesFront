@@ -45,7 +45,7 @@ import castleImg from '../../components/imgs/castillo.png'
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 80%;
+  height: 60%;
 }
 
 .stats-left {

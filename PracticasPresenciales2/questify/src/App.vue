@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import HeaderView from '../src/components/renders/HeaderRender.vue'
-import FooterView from '../src/components/renders/FooterRender.vue'
+import HeaderRender from '../src/components/renders/HeaderRender.vue'
+import FooterRender from '../src/components/renders/FooterRender.vue'
 import { RouterView } from 'vue-router'
 </script>
 
 <template>
   <v-app class="fill-height d-flex flex-column">
-    <HeaderView />
+    <HeaderRender />
     
     <v-main class="flex-grow-1 main-background">
       <RouterView />
     </v-main>
 
-    <FooterView />
+    <FooterRender />
   </v-app>
 </template>
 
