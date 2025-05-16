@@ -1,11 +1,18 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import HeaderNavigationRender from './HeaderNavigationRender.vue';
-import HeaderStatsRender from './HeaderStatsRender.vue';
-</script>
 <template>
+  <div class="header-wrapper">
     <HeaderNavigationRender />
     <HeaderStatsRender />
+  </div>
 </template>
-<style scoped></style>
+
+<script setup lang="ts">
+import HeaderNavigationRender from './HeaderNavigationRender.vue'
+import HeaderStatsRender from './HeaderStatsRender.vue'
+</script>
+
+<style scoped>
+.header-wrapper {
+  background-color: #a5c4de;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+</style>
