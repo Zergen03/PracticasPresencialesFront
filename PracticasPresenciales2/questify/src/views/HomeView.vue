@@ -21,7 +21,6 @@ const categorySearch = ref('')
           <span class="panel-title">{{ t('panel.categories') }}</span>
           <v-text-field v-model="categorySearch" class="panel-search" density="compact" hide-details single-line
             variant="outlined" placeholder="Buscar..." />
-          placeholder="Buscar..." />
         </div>
         <div class="actions">
           <v-icon>mdi-plus-circle-outline</v-icon>

@@ -1,26 +1,28 @@
 <script setup lang="ts">
-import type { Category } from '@/models/Category'
-import { ref, computed } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useCategoryStore } from '@/stores/categoryStore'
 
-// Recibe la búsqueda desde el padre
+// Recibe el texto de búsqueda desde el padre
 const props = defineProps<{
   search: string
 }>()
 
-// Datos originales
-const category = ref<Category[]>([
-  { Id: 1, Name: 'Despliegue de Aplicaciones Web', User_Id: 1 },
-  { Id: 2, Name: 'Administración de Servidores', User_Id: 1 },
-  { Id: 3, Name: 'Pruebas de Rendimiento', User_Id: 1 }
-])
+// Store de categorías
+const categoryStore = useCategoryStore()
 
-// Computed para aplicar filtro en tiempo real
+// Llamar al backend para obtener todas las categorías al montar
+onMounted(() => {
+  categoryStore.fetchAll()
+})
+
+// Computed para aplicar el filtro en tiempo real
 const filteredCategories = computed(() =>
-  category.value.filter(cat =>
+  categoryStore.categories.filter(cat =>
     cat.Name.toLowerCase().includes(props.search.toLowerCase())
   )
 )
 </script>
+
 
 
 <template>
