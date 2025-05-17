@@ -5,4 +5,5 @@ import { ref } from "vue"
 export const useItemsStore = defineStore('items', () => {
     const items = ref<Items[]>([])
     return { items }
+    
 })

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
-import castleImg from '../../components/imgs/castillo.png'
+import castleImg from '../../source/images/castle.png'
 
 const { t } = useI18n()
 </script>
