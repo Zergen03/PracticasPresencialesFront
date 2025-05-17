@@ -9,59 +9,66 @@ const toggleLanguage = () => {
 }
 </script>
 <template>
-    <v-container class="main-layout">
-      <!-- PANEL DE CATEGORÍAS -->
-      <div class="panel">
-        <div class="panel-header">
+  <v-container class="main-layout pa-0" fluid>
+    <!-- PANEL CATEGORÍAS -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title-section">
           <span class="panel-title">{{ t('panel.categories') }}</span>
-          <div class="actions">
-            <v-icon>mdi-plus-circle-outline</v-icon>
-            <v-icon>mdi-minus-circle-outline</v-icon>
-          </div>
+          <v-text-field class="panel-search" density="compact" hide-details single-line variant="outlined"
+            placeholder="Buscar..." />
         </div>
-        <CategoryPanel />
+        <div class="actions">
+          <v-icon>mdi-plus-circle-outline</v-icon>
+          <v-icon>mdi-minus-circle-outline</v-icon>
+        </div>
+      </div>
+      <CategoryPanel />
+    </div>
+
+    <!-- PANEL TAREAS -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-title-section">
+          <span class="panel-title">{{ t('panel.tasks') }}</span>
+
+          <v-text-field class="panel-search" density="compact" hide-details single-line variant="outlined"
+            placeholder="Buscar..." />
+
+          <v-btn-toggle class="filter-toggle" mandatory density="compact" divided>
+            <v-btn v-for="n in 5" :key="n" :value="n" size="small" color="primary"  class="filter">
+              {{ n }}
+            </v-btn>
+          </v-btn-toggle>
+        </div>
+
+        <div class="actions">
+          <v-icon>mdi-plus-circle-outline</v-icon>
+          <v-icon>mdi-minus-circle-outline</v-icon>
+        </div>
       </div>
 
-      <!-- PANEL DE TAREAS -->
-      <div class="panel">
-        <div class="panel-header">
-          <span class="panel-title">{{ t('panel.tasks') }}</span>
-          <div class="actions">
-            <v-icon>mdi-plus-circle-outline</v-icon>
-            <v-icon>mdi-minus-circle-outline</v-icon>
-          </div>
-        </div>
-        <TaskPanel />
-      </div>
-    </v-container>
+      <TaskPanel />
+    </div>
+
+  </v-container>
 </template>
 
-
 <style scoped>
-.main-layout {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  gap: 32px;
-  padding-top: 32px;
-  height: 80%;
-}
-
-.panel {
-  width: 100%;
-  height: 100%;
-  background-color: #1c2066;
-  padding: 16px;
-  border-radius: 4px;
-}
-
 .panel-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
   margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.panel-title-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .panel-title {
@@ -69,8 +76,23 @@ const toggleLanguage = () => {
   font-weight: bold;
 }
 
-.actions v-icon {
-  margin-left: 8px;
+.panel-search {
+  width: 200px;
+  font-size: 14px;
+  color: black;
+  border: 2px solid black;
+}
+
+.filter-toggle {
+  display: flex;
+  gap: 4px;
+  background-color: white;
+}
+.filter {
+    border: 2px solid black;
+}
+.filter:hover {
   cursor: pointer;
 }
+
 </style>

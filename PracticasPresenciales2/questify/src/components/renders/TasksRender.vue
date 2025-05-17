@@ -28,26 +28,13 @@ const task = ref<ToDoTask[]>([
 </template>
 
 <style scoped>
-.custom-list {
-  padding: 0;
-  scrollbar-width: none;
-  width: 100%;
-}
-
 .list-item {
-  padding: 2px 8px;
-  min-height: 24px;
-  font-size: 13px;
-  color: black;
-  width: 98%;
   border: 2px solid black;
-
+  width: 100%;
+  height: 100%;
+  background-color: white;
 }
-.icon-actions {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* espacio entre los íconos */
-  margin-right: 12px; /* margen derecho si deseas separarlos del borde */
+.custom-list {
+  background-color: #1c2066;
 }
-
 </style>

@@ -1,140 +1,164 @@
-/* _header.scss */
+@use '../base/mixins' as *;
 @use '../base/variables' as *;
-@use '../base/mixins' as mixins;
 
-.header {
-  background-color: #a32b2b;
-  height: 20vh;
+
+.header-stats {
+  background-color: #C0C6D6;
+  padding: 12px 24px;
+  @include flex-center(row);
+  justify-content: space-between;
+  height: 60%;
+}
+
+.stats-left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start; 
   width: 100%;
-  
-  &__uppersection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #9BB8D8;
-    height: 40%;
-    
-    .nav {
-      height: 100%;
-      width: 60%;
-      @include mixins.flex-center;
-      
-      img {
-        width: 100px;
-        height: 100%;
-      }
-      
-      &__button {
-        @include mixins.flex-center;
-        height: 100%;
-        width: 30%;
-        background-color: #9BB8D8;
-        cursor: pointer;
-        //borde de 2 px negro solido solo a la der e izq
-        border-left: 2px solid black;
-        border-right: 2px solid black;
+}
 
-        p{
-          font-size: 26px;
-        }
 
-      }
+.castle-img {
+  width: 200px;
+  height: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 16px;
+}
 
-      &__button:hover {
-        opacity: 0.9;
-        border: 2px solid black;
-      }
+.stats-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: $font-size-26 !important;
+  height: 100%;
+}
 
-    }
+.player-label {
+  font-weight: 400;
+  font-size: $font-size-medium;
+  margin-bottom: 4px;
+  color: $text-color;
+}
 
-    .info {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 50%;
-      width: 30%;
-      
-      &__coins {
-        display: flex;
-        align-items: center;
-        
-        i {
-          font-size: 20px;
-        }
-        
-        p {
-          margin-left: 5px;
-        }
-      }
-      
-      &__profile {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15%;
-        
-        img {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-        }
-      }
-    }
+.progress-row {
+  @include flex-center(row, 6px);
+  font-size: $font-size-12;
+}
+
+.icon {
+  color: $text-color;
+}
+
+.xp-label {
+  font-size: $font-size-12;
+  margin-right: 2px;
+}
+
+.bar-container {
+  width: 140px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.bar-label {
+  min-width: 40px;
+  font-size: $font-size-15;
+  text-align: left;
+  color: $text-color;
+}
+
+.quote {
+  font-size: $font-size-26;
+  font-weight: 500;
+  color: $text-color;
+  line-height: 1.3;
+  text-align: right;
+  white-space: nowrap;
+}
+
+
+.nav-bar {
+  height: 100px;
+  background-color: lighten($secondary-color, 10%); // #a5c4de
+  border-bottom: 1px solid rgba($black, 0.2);
+  @include flex-center(row);
+  justify-content: space-between;
+  width: 100%;
+}
+
+.test {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  @include flex-center(row);
+  justify-content: flex-start;
+}
+
+.questify-btn {
+  height: 100%;
+  @include flex-center;
+  border: 2px solid #13294b !important;
+  color: #13294b;
+  background-color: transparent;
+  text-transform: none;
+  font-weight: bold;
+  font-size: $font-size-small;
+  padding: 0 12px;
+  margin-right: 12px;
+  min-width: 90px;
+  font-family: $font-family;
+  box-shadow: none;
+}
+
+.nav-btn {
+  height: 100%;
+  width: 100px;
+  @include flex-center;
+  justify-content: center;
+  background-color: rgba($white, 0.25);
+  padding: 0 14px;
+  margin-right: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  color: $black;
+  border: 1px solid rgba($black, 0.2);
+  font-size: $font-size-14;
+  border-radius: 2px;
+
+  &:hover {
+    background-color: rgba($white, 0.35);
   }
-  
-  &__lowersection {
-    @include mixins.flex-center;
-    gap: 0%;
-    background-color: #bdbdbd;
-    height: 60%;
 
-    &--left {
-      display: flex;
-      align-items: center;
-      gap: 10%;
-      background-color: #C0C6D6;
-      width: 40%;
-      height: 100%;
-      
-      img {
-        width: 130px;
-        height: 90%;
-      }
-
-      .lowersection__stats {
-        margin-left: 15px;
-
-        #level {
-          font-weight: bold;
-        }
-
-        .stats__life, .stats__xp {
-          display: flex;
-          align-items: center;
-          
-          i {
-            margin-right: 5px;
-          }
-          
-          #progressbar {
-            width: 100px;
-            height: 10px;
-            background-color: #888;
-            margin: 0 5px;
-          }
-        }
-      }
-    }
-
-    &--right {
-      background-color: #C0C6D6;
-      width: 60%;
-      height: 100%;
-      @include mixins.flex-center;
-      p {
-        font-size: 18px;
-        font-weight: bold;
-      }
-    }
+  &.router-link-exact-active {
+    border: 2px solid $text-color;
   }
+}
+
+.right-section {
+  @include flex-center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 25%;
+  height: 100%;
+}
+
+.coin-display {
+  @include flex-center;
+  gap: 4px;
+}
+
+.coin-count {
+  font-size: $font-size-16;
+  font-weight: 500;
+  margin: 0;
+}
+
+.lang-btn {
+  min-width: 36px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: $font-size-14;
+  color: #13294b;
 }

@@ -1,12 +1,16 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
+// gulpfile.js (versión compatible con ESM)
+import gulp from 'gulp';
+import gulpSass from 'gulp-sass';
+import * as sass from 'sass'; // ← esta línea evita el warning de deprecated
 
-gulp.task('sass-compile', function () {
+const sassCompiler = gulpSass(sass);
+
+export function sassCompile() {
   return gulp.src('source/main.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sassCompiler().on('error', sassCompiler.logError))
     .pipe(gulp.dest('builds'));
-});
+}
 
-gulp.task('watch', function () {
-  gulp.watch('source/**/*.scss', gulp.series('sass-compile'));
-});
+export function watch() {
+  gulp.watch('source/**/*.scss', sassCompile);
+}

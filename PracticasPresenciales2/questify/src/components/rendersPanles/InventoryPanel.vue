@@ -9,12 +9,4 @@ import ItemRender from '../renders/ItemRender.vue';
   </div>
 </template>
 
-<style scoped>
-.inventory-panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-</style>
+

@@ -1,7 +1,7 @@
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import '../src/assets/css/main.css'
+import '../src/builds/main.css'
 import '@mdi/font/css/materialdesignicons.css'
 
 import App from './App.vue'

@@ -1,52 +1,65 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
 
-h1 {
-    font-size: 18px;
+.inventory-panel {
+  @include flex-center;
+  width: 100%;
+  height: 100%;
 }
 
-body {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.inventory-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  @include flex-center;
+  justify-content: center;
 }
-.contenedor__inventario {
-    background-color: #4E648E;
-    width: 60%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr); 
-    gap: 5px; 
-    padding: 5px;
-    margin-top: 50px;
 
-    &__recuadro {
-        width: auto;
-        height: 10vh;
-        background-color: white;
-        border: 2px solid black;
-        min-height: 30%;
-    }
+.full-container {
+  width: 100%;
+}
 
-            
+.item-row {
+  row-gap: 16px;
+  column-gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
-.recuadro__inv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    &__imagen {
-        width: 5vh;
-        height: 5vh;
-        margin-top: 5vh;
-    }
+
+.item-cell {
+  padding: 4px;
+  max-width: 360px;
 }
-.imagen__textos {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 3vh;
+
+.item-card {
+  background-color: $secondary-color;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid $black;
+  box-shadow: 10px 10px 5px rgba($black, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 12px 12px 8px rgba($black, 0.35);
+  }
+}
+
+.item-name,
+.item-price {
+  font-size: $font-size-14;
+  color: $text-color;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 8px;
 }

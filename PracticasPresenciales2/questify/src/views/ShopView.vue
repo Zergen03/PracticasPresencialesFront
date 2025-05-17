@@ -17,38 +17,3 @@ import ChestRender from '@/components/renders/ChestRender.vue';
     </v-row>
   </v-container>
 </template>
-
-<style scoped>
-.layout {
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.full-width {
-  width: 100%;
-  height: 100%;
-}
-
-.left-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  margin-left: 50px;
-}
-
-.right-panel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40%;
-}
-
-.store-image {
-  width: 60%;
-  height: 80%;
-}
-</style>
