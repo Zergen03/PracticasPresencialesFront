@@ -4,7 +4,10 @@ export default {
       questify: 'Questify',
       tasks: 'Tareas',
       inventory: 'Inventario',
-      store: 'Tienda'
+      store: 'Tienda',
+      login: 'Iniciar Sesión',
+      register: 'Registrarse',
+      logout: 'Cerrar Sesión',
     },
     stats: {
       username: 'NIVEL',
@@ -30,7 +33,15 @@ export default {
     shop: {
       diaria: 'Rotación Diaria',
       cofres: 'Cofres'
-    }
+    },
+    loginregister: {
+      login: 'Iniciar Sesión',
+      register: 'Registrarse',
+      email: 'Nombre de Usuario',
+      password: 'Contraseña',
+      enter: 'Entrar',
+      create: 'Crear Cuenta',
+    },
   },
 
   en: {
@@ -38,7 +49,10 @@ export default {
       questify: 'Questify',
       tasks: 'Tasks',
       inventory: 'Inventory',
-      store: 'Store'
+      store: 'Store',
+      login: 'Login',
+      register: 'Register',
+      logout: 'Logout',
     },
     stats: {
       username: 'LEVEL',
@@ -64,6 +78,14 @@ export default {
     shop: {
       diaria: 'Daily Rotation',
       cofres: 'Chests'
-    }
+    },
+    loginregister: {
+      login: 'Login',
+      register: 'Register',
+      email: 'Username',
+      password: 'Password',
+      enter: 'Enter',
+      create: 'Create Account',
+    },
   }
 }

@@ -2,6 +2,9 @@
 import { useI18n } from 'vue-i18n'
 import castleImg from '../../components/imgs/castillo.png'
 
+import { VProgressLinear, VIcon } from 'vuetify/components'
+
+
 const { t } = useI18n()
 </script>
 
@@ -17,7 +20,7 @@ const { t } = useI18n()
         <div class="progress-row">
           <v-icon size="16" class="icon">mdi-heart-outline</v-icon>
           <div class="bar-container">
-            <v-progress-linear :model-value="0" color="white" bg-color="#ffffff88" :height="8" rounded />
+            <v-progress-linear class="health-bar" :model-value="10" :height="8" rounded />
           </div>
           <span class="bar-label">X/100</span>
         </div>
@@ -26,7 +29,7 @@ const { t } = useI18n()
         <div class="progress-row">
           <span class="xp-label">{{ t('stats.xp') }}</span>
           <div class="bar-container">
-            <v-progress-linear :model-value="0" color="white" bg-color="#ffffff88" :height="8" rounded />
+            <v-progress-linear class="xp-bar" :model-value="40" :height="8" rounded />
           </div>
           <span class="bar-label">X/100</span>
         </div>
@@ -48,6 +51,18 @@ const { t } = useI18n()
   justify-content: space-between;
   align-items: center;
   height: 60%;
+}
+
+.health-bar {
+  color: #cc220b;
+  /* background-color: #ffffff; */
+  border-radius: 4px;
+}
+
+.xp-bar {
+  color: #09c419;
+  /* background-color: #ffffff; */
+  border-radius: 4px;
 }
 
 .stats-left {

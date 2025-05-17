@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { useUserStore } from '../../stores/userStore'
+import LoginPopup from './LoginPopup.vue'
+import RegisterPopup from './RegisterPopup.vue'
 
 const { t, locale } = useI18n()
+
+const userStore = useUserStore()
 
 const toggleLanguage = () => {
   locale.value = locale.value === 'es' ? 'en' : 'es'
@@ -33,12 +38,23 @@ const toggleLanguage = () => {
         <v-icon size="44">mdi-currency-btc</v-icon>
         <span class="coin-count">0</span>
       </div>
-      <v-icon class="ml-4" size="64">mdi-account</v-icon>
+      <!-- <v-icon class="ml-4" size="64">mdi-account</v-icon> -->
+      <div class="login-register-buttons">
+        <template v-if="!userStore.token">
+          <LoginPopup />
+          <RegisterPopup />
+        </template>
+
+        <template v-else>
+          <v-btn text @click="userStore.logout()">{{ t('nav.logout') }}</v-btn>
+        </template>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+
 .nav-bar {
   height: 100px;
   background-color: #a5c4de;
@@ -48,6 +64,13 @@ const toggleLanguage = () => {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+}
+
+.login-register-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .test {
@@ -105,9 +128,9 @@ const toggleLanguage = () => {
 .right-section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 16px;
-  width: 25%;
+  width: 50%;
   height: 100%;
 }
 
