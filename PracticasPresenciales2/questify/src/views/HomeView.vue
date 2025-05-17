@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import CategoryPanel from '@/components/rendersPanles/CategoryPanel.vue';
-import TaskPanel from '@/components/rendersPanles/TaskPanel.vue';
-import { useI18n } from 'vue-i18n';
-const { t, locale } = useI18n()
+import { ref } from 'vue'
+import CategoryPanel from '@/components/rendersPanles/CategoryPanel.vue'
+import TaskPanel from '@/components/rendersPanles/TaskPanel.vue'
+import { useI18n } from 'vue-i18n'
 
+const { t, locale } = useI18n()
 const toggleLanguage = () => {
   locale.value = locale.value === 'es' ? 'en' : 'es'
 }
+
+// Filtro para categorías
+const categorySearch = ref('')
 </script>
 <template>
   <v-container class="main-layout pa-0" fluid>
@@ -15,15 +19,16 @@ const toggleLanguage = () => {
       <div class="panel-header">
         <div class="panel-title-section">
           <span class="panel-title">{{ t('panel.categories') }}</span>
-          <v-text-field class="panel-search" density="compact" hide-details single-line variant="outlined"
-            placeholder="Buscar..." />
+          <v-text-field v-model="categorySearch" class="panel-search" density="compact" hide-details single-line
+            variant="outlined" placeholder="Buscar..." />
+          placeholder="Buscar..." />
         </div>
         <div class="actions">
           <v-icon>mdi-plus-circle-outline</v-icon>
           <v-icon>mdi-minus-circle-outline</v-icon>
         </div>
       </div>
-      <CategoryPanel />
+      <CategoryPanel :search="categorySearch" />
     </div>
 
     <!-- PANEL TAREAS -->
@@ -36,7 +41,7 @@ const toggleLanguage = () => {
             placeholder="Buscar..." />
 
           <v-btn-toggle class="filter-toggle" mandatory density="compact" divided>
-            <v-btn v-for="n in 5" :key="n" :value="n" size="small" color="primary"  class="filter">
+            <v-btn v-for="n in 5" :key="n" :value="n" size="small" color="primary" class="filter">
               {{ n }}
             </v-btn>
           </v-btn-toggle>
@@ -88,11 +93,12 @@ const toggleLanguage = () => {
   gap: 4px;
   background-color: white;
 }
+
 .filter {
-    border: 2px solid black;
+  border: 2px solid black;
 }
+
 .filter:hover {
   cursor: pointer;
 }
-
 </style>

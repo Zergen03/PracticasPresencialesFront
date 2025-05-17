@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import CategoryRender from '../renders/CategoryRender.vue';
+import CategoryRender from '../renders/CategoryRender.vue'
+
+defineProps<{
+    search: string
+}>()
 </script>
 <template>
     <div class="category-panel">
-        <CategoryRender />
+        <CategoryRender :search="search" />
     </div>
 </template>
-
-
